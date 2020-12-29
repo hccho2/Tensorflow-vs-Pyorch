@@ -5,19 +5,18 @@
 ```
 # sincurve fitting
 
+hidden_dim = 10
+model = tf.keras.models.Sequential([ 
+tf.keras.layers.RNN(tf.keras.layers.SimpleRNNCell(hidden_dim),return_sequences=True,return_state=False), tf.keras.layers.Dense(1)])
+
 N = 1000
 
 x = np.linspace(0, 2 * np.pi, N)
 y = np.sin(x) + np.random.uniform(-0.05, 0.05, size=x.shape)
 
-hidden_dim = 10
-model = tf.keras.models.Sequential([ 
-                            tf.keras.layers.RNN(tf.keras.layers.SimpleRNNCell(hidden_dim),return_sequences=True,return_state=False),
-                            tf.keras.layers.Dense(1)])
-
-
 data_x = np.array(y[:-1])
 data_y = np.array(y[1:])
+
 
 num_iter = 500
 T= 5
@@ -64,21 +63,16 @@ class MyRNN(nn.Module):
         x,h = self.rnn(x)
         out = self.fc(x)
         return out
-
+hidden_dim = 10
+model = MyRNN(hidden_dim)
 
 N = 1000
 
 x = np.linspace(0, 2 * np.pi, N)
 y = np.sin(x) + np.random.uniform(-0.05, 0.05, size=x.shape)
 
-
 data_x = torch.Tensor(np.array(y[:-1]))
 data_y = torch.Tensor(np.array(y[1:]))
-
-hidden_dim = 10
-model = MyRNN(hidden_dim)
-loss_fn = nn.MSELoss()
-
 
 
 num_iter = 500
