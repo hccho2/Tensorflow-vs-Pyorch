@@ -108,3 +108,9 @@ plt.legend()
 plt.show()
 
 ```
+
+## 2. Data Loading
+### 2.1 Tensorflow: `tf.keras.utils.Sequence`
+
+
+### 2.2 Pytorch: `torch.utils.data.Dataset, DataLoader`
