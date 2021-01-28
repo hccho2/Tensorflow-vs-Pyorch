@@ -250,6 +250,9 @@ for e in range(num_epoch):
 ```
 import torchvision
 import torchvision.datasets as datasets
+import torchvision.transforms as transforms
+import numpy as np
+import matplotlib.pyplot as plt
 def imshow(inp, title=None):
     """Imshow for Tensor."""
     inp = inp.numpy().transpose((1, 2, 0))
@@ -263,7 +266,7 @@ def imshow(inp, title=None):
         plt.title(title)
     plt.pause(0.001)  # pause a bit so that plots are updated
 
-data_dir = r'D:\hccho\CommonDataset\hymenoptera_data\small'   # 테스트를 위해, data몇개만 모아, 작은 dataset을 만듬.
+data_dir = './small'   # 테스트를 위해, data몇개만 모아, 작은 dataset을 만듬.
 
 data_transforms = transforms.Compose([
     transforms.RandomResizedCrop(224),
