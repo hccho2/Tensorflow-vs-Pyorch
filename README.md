@@ -114,3 +114,13 @@ plt.show()
 
 
 ### 2.2 Pytorch: `torch.utils.data.Dataset, DataLoader`
+
+## 1. Image Dataset Loading
+## 3.1 Pytorch `torchvision.datasets.ImageFolder`
+
+
+## 3.2 Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`
+
+## 3.3 Tensorflow `tf.keras.preprocessing.image_dataset_from_directory`
+
+
