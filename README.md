@@ -115,7 +115,7 @@ plt.show()
 
 ### 2.2 Pytorch: `torch.utils.data.Dataset, DataLoader`
 
-## 1. Image Dataset Loading
+## 3. Image Dataset Loading
 ## 3.1 Pytorch `torchvision.datasets.ImageFolder`
 
 
