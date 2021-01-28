@@ -157,7 +157,33 @@ for i in range(3):
 <p align="center"><img src="torchvision_result.png" />  </p>
 
 ## 3.2 Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`
+```
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+import matplotlib.pyplot as plt
 
+data_dir = './small'
+train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
+
+#class_mode='categorical'  ==> label을 onehot으로 만들어서 return한다.
+train_generator = train_datagen.flow_from_directory(data_dir, target_size=(150, 150), batch_size=8,class_mode='categorical',shuffle=False)
+
+print('class name: ', train_generator.class_indices)  # list(train_generator.class_indices) ==> ['ants', 'bees']
+print('batch_size = ',  train_generator.batch_size, 'image shape: ', train_generator.image_shape)
+
+class_names = list(train_generator.class_indices.keys())
+for i in range(3):
+    inputs, classes = next(iter(train_generator))
+    inputs = np.concatenate(inputs, axis=1)  # (N,150,150,3)  ==> (150,750,3)
+    classes = classes.argmax(axis=-1)
+    plt.figure(figsize=(15,35))
+    plt.imshow(inputs)
+    plt.title([class_names[x] for x in classes])
+    plt.show()
+
+```
+<p align="center"><img src="ImageDataGenerator_result.png" />  </p>
 
 ## 3.3 Tensorflow `tf.keras.preprocessing.image_dataset_from_directory`
 
