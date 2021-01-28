@@ -110,7 +110,27 @@ plt.show()
 ```
 
 ## 2. Data Loading
-### 2.1 Tensorflow: `tf.keras.utils.Sequence`
+### 2.1 Tensorflow `tf.data.Dataset`
+```
+X = np.random.randn(4,2)
+Y = np.arange(4)
+
+def map_fn(X,Y):
+    return (X + tf.random.normal(X.shape,dtype=X.dtype)*0.01,Y)
+
+dataset = tf.data.Dataset.from_tensor_slices((X,Y))
+
+dataset = dataset.map(map_fn).repeat(2)
+dataset = dataset.batch(2)
+
+for d in dataset:
+    print(d)
+
+print('=='*10)
+print(X)
+```
+
+### 2.2 Tensorflow: `tf.keras.utils.Sequence`
 ```
 from skimage.io import imread
 from skimage.transform import resize
@@ -136,9 +156,28 @@ class CIFAR10Sequence(Sequence):
         self.batch_size]
 
         return np.array([resize(imread(file_name), (200, 200)) for file_name in batch_x]), np.array(batch_y)
+
+class MyDataset(tf.keras.utils.Sequence):
+
+    def __init__(self, N,T,batch_size=5):
+        self.batch_size=batch_size
+        self.T = T
+        x = np.linspace(0, 2 * np.pi, N)
+        self.raw_data = np.sin(x) + np.random.uniform(-0.05, 0.05, size=x.shape)
+
+    def __len__(self):
+        return math.ceil(len(self.raw_data) / self.batch_size)
+
+    def __getitem__(self, idx):
+        random_pos = np.random.randint(0,len(self.raw_data)-self.T-1,size=self.batch_size)
+        batch_x =[ self.raw_data[p:p+self.T] for p in random_pos ]
+        target = [ self.raw_data[p+1:p+1+self.T] for p in random_pos ]
+
+        return np.expand_dims(np.stack(batch_x),-1), np.expand_dims(np.stack(target),-1)
+
 ```
 
-### 2.2 Pytorch: `torch.utils.data.Dataset, DataLoader`
+### 2.3 Pytorch: `torch.utils.data.Dataset, DataLoader`
 - `DataLoader(..., collate_fn= xxx)` collate_fn이 tensorflow의 mapping function 역할을 한다.
 - collate_fn에 randomness가 있으면, epoch마다 달라진다.
 ```
