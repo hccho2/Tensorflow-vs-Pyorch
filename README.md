@@ -117,7 +117,43 @@ plt.show()
 
 ## 3. Image Dataset Loading
 ## 3.1 Pytorch `torchvision.datasets.ImageFolder`
+```
+import torchvision
+import torchvision.datasets as datasets
+def imshow(inp, title=None):
+    """Imshow for Tensor."""
+    inp = inp.numpy().transpose((1, 2, 0))
+    mean = np.array([0.485, 0.456, 0.406])
+    std = np.array([0.229, 0.224, 0.225])
+    inp = std * inp + mean
+    inp = np.clip(inp, 0, 1)
+    plt.figure(figsize=(15,15))
+    plt.imshow(inp)
+    if title is not None:
+        plt.title(title)
+    plt.pause(0.001)  # pause a bit so that plots are updated
 
+data_dir = r'D:\hccho\CommonDataset\hymenoptera_data\small'   # 테스트를 위해, data몇개만 모아, 작은 dataset을 만듬.
+
+data_transforms = transforms.Compose([
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+])
+
+train_dataset =  datasets.ImageFolder(data_dir, data_transforms)
+class_names = train_dataset.classes
+print(class_names)
+
+dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=5,shuffle=True)
+
+for i in range(3):
+    inputs, classes = next(iter(dataloader))
+
+    out = torchvision.utils.make_grid(inputs)  # inputs: 5, 3, 224, 224  ---> out: 3, 228, 1132
+    imshow(out, title=[class_names[x] for x in classes])
+```
 
 ## 3.2 Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`
 
