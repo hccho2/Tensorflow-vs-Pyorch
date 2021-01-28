@@ -135,9 +135,7 @@ class CIFAR10Sequence(Sequence):
         batch_y = self.y[idx * self.batch_size:(idx + 1) *
         self.batch_size]
 
-        return np.array([
-            resize(imread(file_name), (200, 200))
-               for file_name in batch_x]), np.array(batch_y)
+        return np.array([resize(imread(file_name), (200, 200)) for file_name in batch_x]), np.array(batch_y)
 ```
 
 ### 2.2 Pytorch: `torch.utils.data.Dataset, DataLoader`
