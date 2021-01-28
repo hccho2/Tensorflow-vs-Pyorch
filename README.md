@@ -186,5 +186,36 @@ for i in range(3):
 <p align="center"><img src="ImageDataGenerator_result.png" />  </p>
 
 ## 3.3 Tensorflow `tf.keras.preprocessing.image_dataset_from_directory`
+```
+def my_preprocessing(image,label):
 
+    image = image/255.   # tf.image.convert_image_dtype는 정수가 들어 왔을 때, 0~1로 변환한다. 넘어온 image에는 resize되면서 0~255사이의 float 값이 들어 있다.
 
+    #image = tf.image.random_flip_left_right(image)  # 확률 50%로 고정되어 있음.
+    #image = tf.image.random_brightness(image, max_delta=0.3)
+    image = tf.image.random_saturation(image, lower=0.5, upper=1.5)  # 채도 조절
+    # random crop
+    shape = tf.shape(image)  # batch size 알아내기
+    #image = tf.image.resize(image, (180,180))
+    image = tf.image.random_crop(image,(shape[0],128,128,3))
+
+    image = tf.clip_by_value(image, 0.0, 1.0)
+
+    return image, label
+
+ds = tf.keras.preprocessing.image_dataset_from_directory('./small',class_names=None, color_mode='rgb', batch_size=8, image_size=(150,150), shuffle=False)
+class_names = ds.class_names
+ds = ds.map(my_preprocessing)
+ds = ds.repeat(5)
+
+it = iter(ds)
+for i in range(3):
+    x, y = next(it)
+    x = np.concatenate(x.numpy(), axis=1)  # (N,150,150,3)  ==> (150,750,3)
+    plt.figure(figsize=(15,35))
+    plt.imshow(x)
+    plt.title([class_names[i] for i in y])
+    plt.show()
+
+```
+<p align="center"><img src="image_dataset_from_directory_result.png" />  </p>
