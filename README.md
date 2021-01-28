@@ -154,7 +154,7 @@ for i in range(3):
     out = torchvision.utils.make_grid(inputs)  # inputs: 5, 3, 224, 224  ---> out: 3, 228, 1132
     imshow(out, title=[class_names[x] for x in classes])
 ```
-
+<p align="center"><img src="torchvision_result.png" />  </p>
 ## 3.2 Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`
 
 ## 3.3 Tensorflow `tf.keras.preprocessing.image_dataset_from_directory`
