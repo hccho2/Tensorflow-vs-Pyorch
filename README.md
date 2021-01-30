@@ -131,7 +131,8 @@ print(X)
 ```
 
 ### 2.2 Tensorflow: `tf.keras.utils.Sequence`
-- `tf.data.Dataset`과 달리 take(3)가 먹지 않는다. iteration(eg. for)은 됨.
+- `tf.data.Dataset`과 달리 take(3)가 먹지 않는다. 필요하면, def take(self,n)으로 만들어 주면 된다.
+- iteration(eg. for)은 됨.
 ```
 from skimage.io import imread
 from skimage.transform import resize
