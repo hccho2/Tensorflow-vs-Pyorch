@@ -146,7 +146,7 @@ class CIFAR10Sequence(Sequence):
         self.x, self.y = x_set, y_set
         self.batch_size = batch_size
 
-    def __len__(self):
+    def __len__(self):  # len()에 의해 호출됨.
         return math.ceil(len(self.x) / self.batch_size)
 
     def __getitem__(self, idx):
