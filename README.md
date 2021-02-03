@@ -292,6 +292,8 @@ for i in range(3):
 <p align="center"><img src="torchvision_result.png" />  </p>
 
 ## 3.2 Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`
+- train/test data가 분리되어 있다면, `ImageDataGenerator`를 각각 만들면 된다.
+- train/test data를 분리해야 한다면, `validation_split=0.2`, `subset=training`/`subset='validation`을 이용하면 된다.
 ```
 import numpy as np
 import tensorflow as tf
