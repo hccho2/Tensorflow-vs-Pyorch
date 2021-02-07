@@ -248,7 +248,7 @@ for e in range(num_epoch):
 
 ```
 ## 3. Image Dataset Loading
-- pytorch는 이미지를 변형 후(, 0~1 사이값으로 변환
+- pytorch는 이미지를 변형 후, 0~1 사이값으로 변환
 - tensorflow는 0~1 사이값으로 변환 후, 이미지를 변형해도 되고, 이미지 변형 후, 0~1로 변환해도 된다.
 ## 3.1 Pytorch `torchvision.datasets.ImageFolder`
 ```
