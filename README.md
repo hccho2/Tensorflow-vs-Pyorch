@@ -363,7 +363,7 @@ for i in range(3):
 <p align="center"><img src="image_dataset_from_directory_result.png" />  </p>
 
 
-## File Move
+## 3.4 File Move
 - https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/utils.py
 - 하나의 디렉토레에 이미지파일이 모여 있다면, subdirectory를 만들어 분리할 필요가 있다.
 ```
@@ -390,3 +390,14 @@ def move_files_to_subdirectory():
         c = '_'.join(basename.split('_')[:-1])   # basset_hound_103.jpg --> ['basset', 'hound', '103.jpg']
         shutil.move(f,os.path.join(base_dir,c))
 ```
+
+# 4. Transfer Learning
+## 4.1 Tensorflow Resnet
+
+## 4.2 Pytorch Resnet
+
+
+
+
+
+
