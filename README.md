@@ -361,3 +361,32 @@ for i in range(3):
 
 ```
 <p align="center"><img src="image_dataset_from_directory_result.png" />  </p>
+
+
+## File Move
+- https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/utils.py
+- 하나의 디렉토레에 이미지파일이 모여 있다면, subdirectory를 만들어 분리할 필요가 있다.
+```
+def move_files_to_subdirectory():
+    # 하나의 디렉토리에 모여 있는 파일을 각각의 sub directory로 이동
+    category =['Abyssinian', 'Bengal', 'Birman', 'Bombay']
+    
+    base_dir = r'D:\hccho\CommonDataset\Pet-Dataset-Oxford\images'
+    
+    # 디렉토리 만들기
+    for c in category:
+        dir_name = os.path.join(base_dir,c)
+        if not os.path.exists(dir_name):
+            os.makedirs(dir_name)
+    
+    
+    all_files = glob.glob(os.path.join(base_dir,"*.jpg"))
+    
+    print("파일갯수: ", len(all_files))
+    
+    # file move
+    for f in all_files:
+        basename = os.path.basename(f)
+        c = '_'.join(basename.split('_')[:-1])   # basset_hound_103.jpg --> ['basset', 'hound', '103.jpg']
+        shutil.move(f,os.path.join(base_dir,c))
+```
