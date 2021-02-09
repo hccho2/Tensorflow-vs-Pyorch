@@ -7,7 +7,10 @@
     - 2.2 [Tensorflow: `tf.keras.utils.Sequence`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#22-tensorflow-tfkerasutilssequence)
     - 2.3 [Pytorch: `torch.utils.data.Dataset, DataLoader`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#23-pytorch-torchutilsdatadataset-dataloader)
  - [3. Image Dataset Loading](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#3-image-dataset-loading)
-    - 3.1 [Pytorch `torchvision.datasets.ImageFolder`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#31-pytorch-torchvisiondatasetsimagefolder)   
+    - 3.1 [Pytorch `torchvision.datasets.ImageFolder`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#31-pytorch-torchvisiondatasetsimagefolder)
+    - 3.2 [Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#32-tensorflow-tfkeraspreprocessingimage-import-imagedatagenerator) 
+    - 3.3 [Tensorflow `tf.keras.preprocessing.image_dataset_from_directory`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#33-tensorflow-tfkeraspreprocessingimage_dataset_from_directory) 
+    - 3.4 [File Move](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#34-file-move) 
 
 
 ## 1. Simple RNN Model
