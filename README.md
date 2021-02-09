@@ -3,8 +3,8 @@
     - 1.1 [Tensorflow RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#11-tensorflow-RNN)
     - 1.2 [Pytorch RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#12-pytorch-rnn)
 - [2. Data Loading](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#2-data-loading)
-    - 2.1 [Tensorflow RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#21-tensorflow-tfdatadataset)
-    - 2.2 [Pytorch RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#22-tensorflow-tfkerasutilssequence)
+    - 2.1 [Tensorflow `tf.data.Dataset`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#21-tensorflow-tfdatadataset)
+    - 2.2 [Tensorflow: `tf.keras.utils.Sequence`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#22-tensorflow-tfkerasutilssequence)
 
 
 ## 1. Simple RNN Model
