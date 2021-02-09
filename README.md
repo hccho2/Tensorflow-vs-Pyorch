@@ -11,7 +11,9 @@
     - 3.2 [Tensorflow `tf.keras.preprocessing.image import ImageDataGenerator`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#32-tensorflow-tfkeraspreprocessingimage-import-imagedatagenerator) 
     - 3.3 [Tensorflow `tf.keras.preprocessing.image_dataset_from_directory`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#33-tensorflow-tfkeraspreprocessingimage_dataset_from_directory) 
     - 3.4 [File Move](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#34-file-move) 
-
+- [4. Transfer Learning](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#4-transfer-learning)
+    - 4.1 [Tensorflow Resnet](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#41-tensorflow-resnet)
+    - 4.2 [Pytorch Resnet](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#42-pytorch-resnet)
 
 ## 1. Simple RNN Model
 ### 1.1 Tensorflow RNN
