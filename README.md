@@ -1,13 +1,13 @@
 # Tensorflow vs Pyorch
 - [1. Simple RNN Model](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#1-simple-rnn-model)
-    - 1.1 [Tensorflow](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#11-tensorflow)
-
+    - 1.1 [Tensorflow RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#11-tensorflow RNN)
+    - 1.2 [Pytorch RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#11-Pytorch RNN)
 
 
 
 
 ## 1. Simple RNN Model
-### 1.1 Tensorflow
+### 1.1 Tensorflow RNN
 ```
 # sincurve fitting
 
@@ -56,7 +56,7 @@ plt.plot(pred.numpy().reshape(-1),label='pred')
 plt.legend()
 plt.show()
 ```
-### 1.2 Pytorch
+### 1.2 Pytorch RNN
 ```
 # sincurve fitting
 
