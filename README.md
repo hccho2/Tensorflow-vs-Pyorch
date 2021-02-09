@@ -5,6 +5,9 @@
 - [2. Data Loading](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#2-data-loading)
     - 2.1 [Tensorflow `tf.data.Dataset`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#21-tensorflow-tfdatadataset)
     - 2.2 [Tensorflow: `tf.keras.utils.Sequence`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#22-tensorflow-tfkerasutilssequence)
+    - 2.3 [Pytorch: `torch.utils.data.Dataset, DataLoader`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#23-pytorch-torchutilsdatadataset-dataloader)
+ - [3. Image Dataset Loading](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#3-image-dataset-loading)
+    - 3.1 [Pytorch `torchvision.datasets.ImageFolder`](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#31-pytorch-torchvisiondatasetsimagefolder)   
 
 
 ## 1. Simple RNN Model
