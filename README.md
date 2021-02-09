@@ -1,7 +1,7 @@
 # Tensorflow vs Pyorch
 - [1. Simple RNN Model](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#1-simple-rnn-model)
     - 1.1 [Tensorflow RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#11-tensorflow-RNN)
-    - 1.2 [Pytorch RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#11-Pytorch-RNN)
+    - 1.2 [Pytorch RNN](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#12-pytorch-rnn)
 
 
 
