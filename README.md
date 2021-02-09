@@ -1,6 +1,6 @@
 # Tensorflow vs Pyorch
-- [1. Simple RNN Model]()
-
+- [1. Simple RNN Model](https://github.com/hccho2/Tensorflow-vs-Pyorch/blob/main/README.md#1-simple-rnn-model)
+    - 1.1 [Tensorflow]()
 
 
 
